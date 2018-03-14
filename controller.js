@@ -1,5 +1,12 @@
 var editingMode = {rect: 0, line: 1};
 
+/**
+ *
+ * @param ctx context
+ * @param drawing
+ * @param canvas Canvas
+ * @constructor
+ */
 function Pencil(ctx, drawing, canvas) {
     this.currEditingMode = editingMode.line;
     this.currLineWidth = 5;
@@ -10,6 +17,10 @@ function Pencil(ctx, drawing, canvas) {
     this.dnd = new DnD(canvas, this);
 
     //Implémentez ici les 3 fonctions onInteractionStart, onInteractionUpdate et onInteractionEnd
+    /**
+     *
+     * @type {any}
+     */
     this.onInteractionEnd = function (dnd) {
         if (this.currEditingMode == editingMode.line) {
             var line = new Line(dnd.getDebut_X(), dnd.getFin_X(), dnd.getDebut_Y(), dnd.getFin_Y(), this.currLineWidth, this.currColour);

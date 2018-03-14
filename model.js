@@ -1,5 +1,9 @@
 // Implémenter ici les 4 classes du modèle.
 // N'oubliez pas l'héritage !
+/**
+ *
+ * @constructor
+ */
 function Drawing() {
     this.listForm = [];
     this.getForms = function () {
@@ -10,6 +14,16 @@ function Drawing() {
     }.bind(this);
 }
 
+/**
+ *
+ * @param abs abscisse
+ * @param ord ordonné
+ * @param width largeur
+ * @param heigth hauteur
+ * @param thickness epaisseur
+ * @param color couleur
+ * @constructor
+ */
 function Rectangle(abs, ord, width, heigth, thickness, color) {
 
     Form.call(this, thickness, color);
@@ -44,6 +58,16 @@ function Rectangle(abs, ord, width, heigth, thickness, color) {
     }.bind(this);
 }
 
+/**
+ *
+ * @param abs1 abscisse x
+ * @param abs2 abscisse y
+ * @param ord1 ordonnée x
+ * @param ord2 ordonnée y
+ * @param thickness epaisseur
+ * @param color couleur
+ * @constructor
+ */
 function Line(abs1, abs2, ord1, ord2, thickness, color) {
 
     Form.call(this, thickness, color);

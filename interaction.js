@@ -1,5 +1,11 @@
 // La création d'un Dnd requière un canvas et un interacteur.
 // L'interacteur viendra dans un second temps donc ne vous en souciez pas au départ.
+/**
+ *
+ * @param canvas canvas
+ * @param interactor iterateur
+ * @constructor
+ */
 function DnD(canvas, interactor) {
     // Définir ici les attributs de la 'classe'
     this.Debut_X = 0;
@@ -36,6 +42,10 @@ function DnD(canvas, interactor) {
     }.bind(this);
 
     // Developper les 3 fonctions gérant les événements
+    /**
+     *
+     * @type {any}
+     */
     this.pression = function (evt) {
         this.setDebut_X(getMousePosition(canvas, evt).abs);
         this.setDebut_Y(getMousePosition(canvas, evt).ord);
@@ -61,6 +71,12 @@ function DnD(canvas, interactor) {
 };
 
 // Place le point de l'événement evt relativement à la position du canvas.
+/**
+ *
+ * @param canvas Canvas
+ * @param evt evenement
+ * @returns {{abs: number, ord: number}}
+ */
 function getMousePosition(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
     return {
